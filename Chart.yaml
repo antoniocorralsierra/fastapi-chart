@@ -1,0 +1,4 @@
+apiVersion: v1
+name: fastapi
+version: 1.0.0
+description: Chart for fastapi app

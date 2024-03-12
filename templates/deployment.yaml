@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-fastapi
+spec:
+  selector:
+    matchLabels:
+      app: fastapi
+  replicas: {{ .Values.replicas }}
+  template:
+    metadata:
+      labels:
+        app: fastapi
+    spec:
+      containers:
+      - name: docker-fastapi
+        image: fastapi:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8081
